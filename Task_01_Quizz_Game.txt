@@ -45,9 +45,29 @@ var question10={
   question:"\nQ10.Twice once sung thrice for Katie Price on a stage of dice and dry ice. True or false?\n1.True\n2.False\n",
   answer:2
 }
+var question11={
+  question:"\nQ11.What is Jihyo's favorite number?\n1.45\n2.12\n3.21\n4.20\n",
+  answer:3
+}
+var question12={
+  question:"\nQ12.When Momo passed the audition?\n1.April 13, 2012\n2.March 22, 2013\n3.December 2, 2012\n4.February 18, 2013\n",
+  answer:1
+}
+var question13={
+  question:"\nQ13.What is the order of the songs on 'The Story Begins' album?\n1.Like ooh ahh, Do it again, Going crazy, Truth, Like a fool, Candy boy\n2.Like ooh ahh, Do it again, Going crazy, Truth, Candy boy, Like a fool\n3.Like ooh ahh, Do it again, Truth, Going crazy, Like a fool, Candy boy\n4.Like ooh ahh, Going crazy, Truth, Do it again, Candy boy, Like a fool\n",
+  answer:2
+}
+var question14={
+  question:"\nQ14.When did the 'Twicecoaster: Lane 1' album appearance?\n1.November 14, 2016\n2.October 14, 2016\n3.October 24, 2016\n4.November 24, 2016\n",
+  answer:3
+}
+var question15={
+  question:"\nQ15.Who wrote their song 'Eye, eye, eyes'?\n1.Momo and Dahyun\n2.Jihyo and Chaeyoung\n3.Jeongyeon and Chaeyoung\n4.Nayeon and Jihyo\n",
+  answer:2
+}
 
 //Array with all questions
-var questions=[question1,question2,question3,question4,question5,question6,question7,question8,question9,question10]
+var questions=[question1,question2,question3,question4,question5,question6,question7,question8,question9,question10,question11,question12,question13,question14,question15]
 
 //Function to display question and check answers, updating score.
 for(var i=0;i<questions.length;i++){
