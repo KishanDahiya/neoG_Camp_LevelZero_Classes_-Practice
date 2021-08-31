@@ -1,6 +1,7 @@
 var readlineSync= require('readline-sync');
 var score=0;
-console.log('Welcome To Quizz About Kishan!!!')
+var username=readlineSync.question("What is your name?\n")
+console.log('\nHey '+username+' Welcome To Quiz About Kishan!!!')
 
 var questionOne={
   question:"\nHow old is Kishan?\n",
@@ -24,8 +25,9 @@ for(var i=0;i<questions.length;i++)
     score=score+1;
     console.log('Correct Answer !!!\nYour score is : '+score);
     }else{
-      score=score-1;
       console.log('Sorry Wrong Answer :(\nYour score is : '+score);
       }
 }
-console.log('\n\n\nGame Over !!!\nYour score is : '+score);
+var total=questions.length
+
+console.log('\n\n\nGame Over !!!\nYour score is : '+score+'/'+total);
