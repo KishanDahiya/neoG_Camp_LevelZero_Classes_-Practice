@@ -1,0 +1,88 @@
+var readlineSync= require('readline-sync');
+var score=0;
+var username=readlineSync.question("What is your name?\n")
+console.log('\nHey '+username+' Welcome To Quiz About TWICE!!!\nHow well do you know TWICE???')
+console.log("\nAnswer only in the option numbers\nEx : 1 or 3 or 2 or 4")
+
+//All 10 Questions are listed below
+var question1={
+  question:"\nQ1.Twice has how many members?\n1.5\n2.9\n3.8\n4.7\n",
+  answer:2
+}
+var question2={
+  question:"\nQ2.Which member of Twice was born in Tainan, Taiwan\n1.Nayeon\n2.Jeongyeon\n3.Tzuyu\n4.Dahyun\n",
+  answer:3
+}
+var question3={
+  question:"\nQ3.Which of the following is NOT a member of Twice\n1.Sana\n2.Mina\n3.Momo\n4.Pippin\n",
+  answer:4
+}
+var question4={
+  question:"\nQ4.What was the name of Twice's debut EP?\n1.What's Twice?\n2.The Story Begins\n3.Once, Twice, Three Times a Lady\n4.Fools Paradise(Twice The Admission Price)\n",
+  answer:2
+}
+var question5={
+  question:"\nQ5.Who is the oldest member of Twice?\n1.Nayeon\n2.Chaeyoung\n3.Kevin\n4.Jihyo\n",
+  answer:1
+}
+var question6={
+  question:"\nQ6.What was the name of the reality TV show created to find the members of Twice?\n1.The X Factor\n2.Sixteen\n3.The Search\n4.Hunt For The K-Poppets\n",
+  answer:2
+}
+var question7={
+  question:"\nQ7.Which member of twice is the younger sister of actress Gong Seung-yeon?\n1.Dahyun\n2.Mina\n3.Tzuyu\n4.Jeongyeon\n",
+  answer:4
+}
+var question8={
+  question:"\nQ8.How old was Momo when she first began dancing?\n1.2\n2.3\n3.4\n4.6\n",
+  answer:2
+}
+var question9={
+  question:"\nQ9.Which member of Twice was born in San Antonio, Texas?\n1.Jihyo\n2.Sana\n3.Mina\n4.Uncle Albert\n",
+  answer:3
+}
+var question10={
+  question:"\nQ10.Twice once sung thrice for Katie Price on a stage of dice and dry ice. True or false?\n1.True\n2.False\n",
+  answer:2
+}
+
+//Array with all questions
+var questions=[question1,question2,question3,question4,question5,question6,question7,question8,question9,question10]
+
+//Function to display question and check answers, updating score.
+for(var i=0;i<questions.length;i++){
+  current=questions[i];
+  console.log(current.question)
+  var userAnswer=readlineSync.question("Answer : ");
+  if(userAnswer==current.answer){
+    score=score+1;
+    console.log('Correct Answer !!!\nYour score is : '+score);
+    }else{
+      console.log('Sorry Wrong Answer :( \nYour score is : '+score);
+      }
+  }
+var total=questions.length
+
+//Ending message to the player.
+console.log('\n\n\nGame Over !!!\nYour score is : '+score+'/'+total);
+console.log("Share your scores with Kishan.\n\n")
+
+//Storing the current Highscores 
+var kishan={
+  name:"Kishan",
+  score:10
+}
+var barun={
+  name:"Barun",
+  score:10
+}
+
+//defining the highscore array with objects
+var highscores=[kishan,barun];
+
+//Displaying the highscore list
+console.log("-------Leaderboard-------")
+for(var i=0;i<highscores.length;i++){
+  currentHscore=highscores[i];
+  console.log(currentHscore.name+" : "+currentHscore.score)
+}
