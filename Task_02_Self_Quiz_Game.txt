@@ -5,6 +5,20 @@ var username=readlineSync.question(chalk.hex('#70CED0').bold("What is your name?
 console.log(chalk.hex('#25B396')('\nHey '+username+' Welcome To Quiz About Kishan!!!\n\n------How well do you know Kishan???------'))
 console.log(chalk.hex('#FE4567').bold("\nAnswer only in the option numbers\nEx : 1 or 3 or 2 or 4\n"))
 
+
+//Storing the current Highscores 
+var kishan={
+  name:"Kishan",
+  score:10
+}
+var saurabh={
+  name:"Saurabh",
+  score:09
+}
+
+//defining the highscore array with objects
+var highscores=[kishan,saurabh];
+
 //All 10 Questions are listed below
 var question1={
   question:"\nQ1.What is Kishans surname?\n1.Gupta\n2.Batra\n3.Sharma\n4.Dahiya\n",
@@ -51,7 +65,7 @@ var question11={
   answer:1
 }
 var question12={
-  question:"\nQ12.How much does Kishan Weight?\n1.123kg, 2012\n2.88kg\n3.72kg\n4.81kg\n",
+  question:"\nQ12.How much does Kishan Weight?\n1.123kg\n2.88kg\n3.72kg\n4.81kg\n",
   answer:4
 }
 var question13={
@@ -70,7 +84,7 @@ var question15={
 //Array with all questions
 var questions=[question1,question2,question3,question4,question5,question6,question7,question8,question9,question10,question11,question12,question13,question14,question15]
 
-//Function to display question and check answers, updating score.
+//Loop to display question and check answers, updating score.
 for(var i=0;i<questions.length;i++){
   current=questions[i];
   console.log(chalk.hex('#005DFF ').bold(current.question))
@@ -82,32 +96,21 @@ for(var i=0;i<questions.length;i++){
       console.log(chalk.hex('#FF0000').bold('\nSorry Wrong Answer :( \nYour score is : '+score));
       }
   }
-var total=questions.length
+
+var total=questions.length;
 
 //Ending message to the player.
 console.log(chalk.hex('#FF0000').bold('\n\nGame Over !!!\nYour score is : '+score+'/'+total));
-console.log(chalk.hex('#00BDFF ').bold("\nShare your scores with Kishan.\n\n"));
 
-//Storing the current Highscores 
-var kishan={
-  name:"Kishan",
-  score:10
-}
-var saurabh={
-  name:"Saurabh",
-  score:09
-}
-var shamnan={
-  name:"Shamnan",
-  score:15
-}
-var barun={
-  name:"Barun",
-  score:10
-}
+//Calculating HighScore ,if broken a record asking to send a screenshot to update the LeaderBoard
 
-//defining the highscore array with objects
-var highscores=[shamnan,kishan,barun,saurabh];
+for(var i=0;i<highscores.length;i++){
+  currentHscore=highscores[i];
+  if(score>currentHscore.score){
+    console.log(chalk.hex('#FE4567').bold("\nYou Broke one of the TOP SCORE!!!\nSend A screenshot to Kishan to update the LeaderBoard\n"))
+    break
+    }
+}
 
 //Displaying the highscore list
 console.log(chalk.hex('#2EFE20').bold("-------Leaderboard-------"))
