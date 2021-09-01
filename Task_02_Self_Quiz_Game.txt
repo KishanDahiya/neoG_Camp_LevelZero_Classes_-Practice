@@ -113,7 +113,7 @@ for(var i=0;i<highscores.length;i++){
 }
 
 //Displaying the highscore list
-console.log(chalk.hex('#2EFE20').bold("-------Leaderboard-------"))
+console.log(chalk.hex('#2EFE20').bold("\n-------Leaderboard-------"))
 for(var i=0;i<highscores.length;i++){
   currentHscore=highscores[i];
   console.log(chalk.hex('#FFBF00').bold(currentHscore.name+" : "+currentHscore.score))
