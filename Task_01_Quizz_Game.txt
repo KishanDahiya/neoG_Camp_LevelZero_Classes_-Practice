@@ -1,8 +1,9 @@
-var readlineSync= require('readline-sync');
+const readlineSync= require('readline-sync');
+const chalk = require('chalk');
 var score=0;
-var username=readlineSync.question("What is your name?\n")
-console.log('\nHey '+username+' Welcome To Quiz About TWICE!!!\nHow well do you know TWICE???')
-console.log("\nAnswer only in the option numbers\nEx : 1 or 3 or 2 or 4")
+var username=readlineSync.question(chalk.hex('#70CED0').bold("What is your name?\n"))
+console.log(chalk.hex('#25B396')('\nHey '+username+' Welcome To Quiz About TWICE!!!\n\n------How well do you know TWICE???------'))
+console.log(chalk.hex('#FE4567').bold("\nAnswer only in the option numbers\nEx : 1 or 3 or 2 or 4\n"))
 
 //All 10 Questions are listed below
 var question1={
@@ -72,25 +73,33 @@ var questions=[question1,question2,question3,question4,question5,question6,quest
 //Function to display question and check answers, updating score.
 for(var i=0;i<questions.length;i++){
   current=questions[i];
-  console.log(current.question)
-  var userAnswer=readlineSync.question("Answer : ");
+  console.log(chalk.hex('#005DFF ').bold(current.question))
+  var userAnswer=readlineSync.question(chalk.hex('#FFE33F').bold("Answer : "));
   if(userAnswer==current.answer){
     score=score+1;
-    console.log('Correct Answer !!!\nYour score is : '+score);
+    console.log(chalk.hex('#00FF08 ').bold('\nCorrect Answer !!!\nYour score is : '+score));
     }else{
-      console.log('Sorry Wrong Answer :( \nYour score is : '+score);
+      console.log(chalk.hex('#FF0000').bold('\nSorry Wrong Answer :( \nYour score is : '+score));
       }
   }
 var total=questions.length
 
 //Ending message to the player.
-console.log('\n\n\nGame Over !!!\nYour score is : '+score+'/'+total);
-console.log("Share your scores with Kishan.\n\n")
+console.log(chalk.hex('#FF0000').bold('\n\nGame Over !!!\nYour score is : '+score+'/'+total));
+console.log(chalk.hex('#00BDFF ').bold("\nShare your scores with Kishan.\n\n"));
 
 //Storing the current Highscores 
 var kishan={
   name:"Kishan",
   score:10
+}
+var saurabh={
+  name:"Saurabh",
+  score:09
+}
+var shamnan={
+  name:"Shamnan",
+  score:15
 }
 var barun={
   name:"Barun",
@@ -98,11 +107,11 @@ var barun={
 }
 
 //defining the highscore array with objects
-var highscores=[kishan,barun];
+var highscores=[shamnan,kishan,barun,saurabh];
 
 //Displaying the highscore list
-console.log("-------Leaderboard-------")
+console.log(chalk.hex('#2EFE20').bold("-------Leaderboard-------"))
 for(var i=0;i<highscores.length;i++){
   currentHscore=highscores[i];
-  console.log(currentHscore.name+" : "+currentHscore.score)
+  console.log(chalk.hex('#FFBF00').bold(currentHscore.name+" : "+currentHscore.score))
 }
